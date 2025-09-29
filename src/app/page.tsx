@@ -21,7 +21,7 @@ export default function Home() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const id = useId();
   
   useEffect(() => {
