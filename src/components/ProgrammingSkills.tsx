@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee"
-
+import Image from 'next/image';
 const skills = [
   { name: "C", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
   { name: "C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
@@ -38,9 +38,11 @@ const ReviewCard = ({
     "hover:bg-white/20 hover:scale-[1.04] hover:shadow-[0_0_25px_#FFA50040]",
   )}
 >
-  <img
+  <Image
     src={logo}
     alt={name}
+    width={48}
+    height={48}
     className="w-5 h-5 object-contain"
     onError={(e) => {
       (e.target as HTMLImageElement).src =

@@ -3,9 +3,9 @@
 import { motion , AnimatePresence } from "framer-motion";
 import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 // Assuming Magic UI + Aceternity UI components are installed
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
-import { RippleButton } from "@/components/ui/ripple-button";
+// import { RippleButton } from "@/components/ui/ripple-button";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { FlipWords } from "@/components/ui/flip-words";
 // import { Boxes } from "@/components/ui/background-boxes";
@@ -15,6 +15,8 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import React, { useEffect, useId, useRef, useState } from "react";
 import  ProgrammingSkills  from "@/components/ProgrammingSkills"
 import  ToolsSkills  from "@/components/Tool"
+import myPicture from '../../public/me.png';
+import Image from 'next/image';
 export default function Home() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
@@ -100,9 +102,11 @@ export default function Home() {
         className="flex-1 flex justify-center mt-8 md:mt-0 relative z-10"
       >
         <Card className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-full p-4 w-64 h-64 overflow-hidden relative ">
-          <img
-            src="./me.png"
-            className="object-cover w-full h-full rounded-full "
+          <Image
+            src={myPicture}
+            alt="" // Alt text is required!
+            className="object-cover rounded-full p-4"
+            fill
           />
         </Card>
       </motion.div>
@@ -199,7 +203,7 @@ export default function Home() {
               className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[80%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
-                <img
+                <Image
                   width={200}
                   height={200}
                   src={active.src}
@@ -253,7 +257,7 @@ export default function Home() {
         ) : null}
       </AnimatePresence>
       <ul className="max-w-2xl mx-auto w-full gap-4">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
@@ -264,7 +268,7 @@ export default function Home() {
           >
             <div className="flex gap-4 flex-col md:flex-row">
               <motion.div layoutId={`image-${card.title}-${id}`}>
-                <img
+                <Image
                   width={100}
                   height={100}
                   src={card.src}
@@ -322,39 +326,7 @@ export default function Home() {
     </main>
   );
 }
-export const CloseIcon = () => {
-  return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-4 w-4 text-black"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M18 6l-12 12" />
-      <path d="M6 6l12 12" />
-    </motion.svg>
-  );
-};
- 
+
 const cards = [
   {
     description: "React, Supabase, ShadCN, typescript, machine learning",
@@ -399,7 +371,7 @@ const cards = [
   {
     description: "Machine Learning, NLP, Mistral-7B",
     title: "Judol Promotion Detector",
-    src: "./judol.jpeg",
+    src: "/judol.jpeg",
     ctaText: "View",
     ctaLink: "",
     content: () => {
@@ -413,7 +385,7 @@ const cards = [
   {
     description: "yolo-v5, pytorch, python",
     title: "Computer Vision based thief alert",
-    src: "./malingmotor.png",
+    src: "/malingmotor.png",
     ctaText: "View",
     ctaLink: "",
     content: () => {
@@ -427,7 +399,7 @@ const cards = [
   {
     description: "HTML, CSS, JS",
     title: "DiamondCut Motors",
-    src: "./DiamondCut Motors.png",
+    src: "/DiamondCut Motors.png",
     ctaText: "View",
     ctaLink: "",
     content: () => {
@@ -441,7 +413,7 @@ const cards = [
   {
     description: "HTML, CSS, JavaScript",
     title: "BitHub learning prototype",
-    src: "./BitHub.jpg",
+    src: "/BitHub.jpg",
     ctaText: "View",
     ctaLink: "",
     content: () => {
