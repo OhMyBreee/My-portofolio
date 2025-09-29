@@ -1,8 +1,9 @@
 "use client";
 
 import { motion , AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Mail, Instagram } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram} from "lucide-react";
 // Assuming Magic UI + Aceternity UI components are installed
+import { SiLeetcode } from "react-icons/si";
 import { Card } from "@/components/ui/card";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 // import { RippleButton } from "@/components/ui/ripple-button";
@@ -17,6 +18,7 @@ import  ProgrammingSkills  from "@/components/ProgrammingSkills"
 import  ToolsSkills  from "@/components/Tool"
 import myPicture from '../../public/me.png';
 import Image from 'next/image';
+import { AboutBentoSection } from "@/components/about-bento"
 export default function Home() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
@@ -90,8 +92,8 @@ export default function Home() {
           {/* <span className="font-semibold"> AI development</span> and
           <span className="font-semibold"> Full-Stack development</span>. */}
         </p>
-        <a href="#skills"><ShimmerButton className=" bg-orange-500 text-white shadow-lg" >
-          View my skills
+        <a href="#about"><ShimmerButton className=" bg-orange-500 text-white shadow-lg" >
+          Start Exploring
         </ShimmerButton></a>
       </motion.div>
 
@@ -115,11 +117,16 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
     </WavyBackground>
 
-      {/* Skills */}
+      {/* About */}
       <section
-        id="about"
-        className="py-24 px-6 w-full mx-auto bg-gradient-to-b from-[#000000] to-[#20160e] ">
-      </section>
+          id="about"
+          className=" px-6 w-full mx-auto bg-gradient-to-b from-[#000000] to-[#20160e]"
+        >
+          {/* <h3 className=" bg-gradient-to-b from-orange-200 to-orange-500 bg-clip-text text-transparent text-2xl font-bold sm:text-7xl text-center mb-5">About me</h3> */}
+          <AboutBentoSection></AboutBentoSection>
+        </section>
+
+
 
       {/* Skills */}
       <section
@@ -309,7 +316,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16 px-6 w-full mx-auto text-center bg-black">
+      <section id="contact" className="py-16 px-6 w-full mx-auto text-center bg-black align">
         <h3 className="text-3xl font-bold mb-8 text-orange-400">Contact Me</h3>
         <p className="mb-6">Aspiring programmer based in Jakarta and Tangerang Selatan.</p>
         <div className="flex justify-center gap-6 mb-6">
@@ -317,11 +324,25 @@ export default function Home() {
           <a href="https://instagram.com/breee.avi" target="_blank" className="hover:text-orange-400"><Instagram /></a>
           <a href="https://github.com/OhMyBreee" target="_blank" className="hover:text-orange-400"><Github /></a>
           <a href="https://www.linkedin.com/in/bryansantosa/" target="_blank" className="hover:text-orange-400"><Linkedin /></a>
-          <a href="https://www.linkedin.com/in/bryansantosa/" target="_blank" className="hover:text-orange-400"><Linkedin /></a>
+          <a href="https://leetcode.com/u/BukanBryan/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500">
+            <SiLeetcode size={22} /> {/* You can control size with props */}
+          </a>
         </div>
-        <ShimmerButton className=" bg-orange-500 text-white shadow-lg hover:bg-orange-600">
-          Let’s Work Together
-        </ShimmerButton>
+        <div className="flex justify-center">
+          <a 
+            href="/CV-BRYAN.pdf" 
+            download="CV-BRYAN.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <ShimmerButton className="bg-orange-500 text-white shadow-lg hover:bg-orange-600 px-6 py-3 rounded-lg">
+              Download my CV
+            </ShimmerButton>
+          </a>
+        </div>
       </section>
     </main>
   );
@@ -352,7 +373,7 @@ const cards = [
     title: "Guitar Chord Recognizer",
     src: "./audio-lines.svg",
     ctaText: "View",
-    ctaLink: "",
+    ctaLink: "https://github.com/Zaps36/guitar_chord_recognition.git",
     content: () => {
       return (
         <p>
@@ -373,7 +394,7 @@ const cards = [
     title: "Judol Promotion Detector",
     src: "/judol.jpeg",
     ctaText: "View",
-    ctaLink: "",
+    ctaLink: "https://drive.google.com/file/d/1H_XPnSZX3A-_JagU2ezWfjuImbd9onXa/view?usp=sharing",
     content: () => {
       return (
         <p>
@@ -387,7 +408,7 @@ const cards = [
     title: "Computer Vision based thief alert",
     src: "/malingmotor.png",
     ctaText: "View",
-    ctaLink: "",
+    ctaLink: "https://drive.google.com/drive/u/3/folders/10DCEi6irHHGTpEXZ_c7y95N28yIVXTa2",
     content: () => {
       return (
         <p>
@@ -401,7 +422,7 @@ const cards = [
     title: "DiamondCut Motors",
     src: "/DiamondCut Motors.png",
     ctaText: "View",
-    ctaLink: "",
+    ctaLink: "https://ohmybreee.github.io/DiamondCutMotors/Home%20Page/",
     content: () => {
       return (
         <p>
@@ -415,7 +436,7 @@ const cards = [
     title: "BitHub learning prototype",
     src: "/BitHub.jpg",
     ctaText: "View",
-    ctaLink: "",
+    ctaLink: "https://ohmybreee.github.io/BitHub/HCI_RevisiHome_Jeisen/index.html",
     content: () => {
       return (
         <p>
