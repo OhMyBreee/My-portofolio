@@ -71,7 +71,7 @@ const features = [
     description:
       "A long-time designer with experience in visual communication, branding, and UI/UX prototyping. My design mindset shapes the way I code and teach.",
     className: "col-span-3 lg:col-span-1",
-    href: "https://www.canva.com/design/DAG0VfczvjY/qj--Dq6eU5360qCOXtRrsg/edit?utm_content=DAG0VfczvjY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton", // replace with your actual Figma link
+    href: "https://bukanbryan.my.canva.site/", // replace with your actual Figma link
     cta: "Explore Portofolio",
     background: (
       <div className="absolute inset-0 flex items-center justify-center">
