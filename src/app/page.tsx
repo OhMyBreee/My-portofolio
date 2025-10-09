@@ -333,8 +333,8 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <a 
-            href="/CV-BRYAN.pdf" 
-            download="CV-BRYAN.pdf" 
+            href="/CV-BRYAN.png" 
+            download="CV-BRYAN.png" 
             target="_blank" 
             rel="noopener noreferrer"
           >
