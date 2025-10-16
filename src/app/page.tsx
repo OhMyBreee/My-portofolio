@@ -16,7 +16,7 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import React, { useEffect, useId, useRef, useState } from "react";
 import  ProgrammingSkills  from "@/components/ProgrammingSkills"
 import  ToolsSkills  from "@/components/Tool"
-import myPicture from '../../public/me.png';
+import myPicture from '../../public/me.jpg';
 import Image from 'next/image';
 import { AboutBentoSection } from "@/components/about-bento"
 export default function Home() {
